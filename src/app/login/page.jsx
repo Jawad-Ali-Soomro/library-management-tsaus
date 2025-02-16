@@ -1,4 +1,5 @@
 "use client";
+import { redirect } from "next/navigation";
 import React, { useState } from "react";
 
 const Page = () => {
@@ -19,7 +20,7 @@ const Page = () => {
   };
 
   return (
-    <div className="page flex bw">
+    <div className="page flex">
       <div className="container-auth flex col">
         <img src="/logo.png" alt="" />
         <h1>Library Management</h1>
@@ -51,15 +52,20 @@ const Page = () => {
           <div className="text flex">
             <span>OR</span>
           </div>
-          <button className="btn-login flex">register</button>
+          <button
+            className="btn-login flex"
+            onClick={() => redirect("/register")}
+          >
+            register
+          </button>
         </div>
       </div>
-      <div className="right-side flex">
+      {/* <div className="right-side flex">
         <h1>
           The <span>revival</span> of educational <span>glory</span> to
           Shikarpur
         </h1>
-      </div>
+      </div> */}
     </div>
   );
 };

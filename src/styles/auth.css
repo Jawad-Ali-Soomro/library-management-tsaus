@@ -9,26 +9,31 @@
     text-transform: capitalize;
     font-weight: 600;
   }
+  img {
+    width: 120px;
+  }
   .form-auth {
     margin-top: 50px;
     gap: 20px;
     .wrapper-input {
       align-items: start;
-      width: 500px;
+      width: 400px;
       height: 50px;
       border: 1px solid #80808090;
       position: relative;
       border-radius: 10px;
+      z-index: 10;
       label {
         padding: 0px 10px;
         position: absolute;
         top: -8px;
-        left: 20px;
+        left: 10px;
         background: white;
         z-index: 1;
-        text-transform: capitalize;
+        text-transform: uppercase;
         font-weight: 600;
         font-size: 0.8rem;
+        transition: 0.5s;
       }
       input {
         width: calc(100% - 10px);
@@ -43,6 +48,8 @@
       border: 1px solid royalblue;
       label {
         color: royalblue;
+        top: -20px;
+        padding: 0px 10px;
       }
     }
     button {
@@ -76,23 +83,5 @@
       background: transparent;
       color: royalblue;
     }
-  }
-}
-
-.right-side {
-  width: 50%;
-  background: royalblue;
-  height: 100vh;
-  h1 {
-    color: white;
-    font-size: 6rem;
-    padding: 50px;
-    text-align: center;
-    line-height: 150px;
-    font-family: satisfy;
-    span {
-      font-weight: 900;
-    }
-    text-transform: capitalize;
   }
 }
