@@ -16,4 +16,4 @@ bun dev
 
 Open [`http://localhost:3000`](http://localhost:3000) with your browser to see the result.
 
-This is day 1/30 days challenge to learn & develop a project
+This is day 2/30 days challenge to learn & develop a project
