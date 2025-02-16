@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "email is required!"],
+    unique: [true, "this email is associated with another account!"],
   },
   phone_number: {
     type: Number,
@@ -20,6 +21,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "password is required!"],
+    select: false,
   },
   department: {
     type: String,
@@ -39,7 +41,7 @@ const userSchema = new mongoose.Schema({
   },
   roll_number: {
     type: String,
-    unique: [true, "this  roll number is associated with another account!"],
+    default: "",
   },
   semester: {
     type: Number,
@@ -64,5 +66,5 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
-const User = mongoose.models.users || mongoose.model("User", userSchema);
-module.exports = User;
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+export default User;
