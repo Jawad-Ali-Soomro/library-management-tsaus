@@ -4,7 +4,6 @@ import React, { useState } from "react";
 const Page = () => {
   const [btnDisabled, setIsDisabled] = useState(true);
   const [formFields, setFields] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -12,7 +11,7 @@ const Page = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFields((prev) => ({ ...prev, [name]: value }));
-    if (formFields.email && formFields.username && formFields.password) {
+    if (formFields.email && formFields.password) {
       setIsDisabled(false);
     } else {
       setIsDisabled(true);
@@ -25,15 +24,6 @@ const Page = () => {
         <img src="/logo.png" alt="" />
         <h1>Library Management</h1>
         <div className="form-auth flex col">
-          <div className="wrapper-input flex col">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              name="username"
-              value={formFields.username}
-              onChange={handleChange}
-            />
-          </div>
           <div className="wrapper-input flex col">
             <label htmlFor="email">Email</label>
             <input
@@ -56,12 +46,12 @@ const Page = () => {
             disabled={btnDisabled}
             style={{ background: btnDisabled ? "gray" : "royalblue" }}
           >
-            Register
+            login
           </button>
           <div className="text flex">
             <span>OR</span>
           </div>
-          <button className="btn-login flex">LOGIN</button>
+          <button className="btn-login flex">register</button>
         </div>
       </div>
       <div className="right-side flex">

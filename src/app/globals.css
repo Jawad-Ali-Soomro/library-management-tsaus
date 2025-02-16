@@ -1,7 +1,7 @@
 @import "../styles/index.css";
-
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=PT+Sans+Narrow:wght@400;700&family=Pacifico&family=Satisfy&display=swap");
 :root {
-  --background: #f5efef;
+  --background: white;
   --foreground: #171717;
 }
 
@@ -9,7 +9,8 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-geist-sans);
+  /* font-family: var(--font-geist-sans); */
+  font-family: exo;
 }
 
 body {

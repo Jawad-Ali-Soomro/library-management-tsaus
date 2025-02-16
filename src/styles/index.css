@@ -1,3 +1,29 @@
+@import "./../styles/auth.css";
 .page {
   min-height: 100vh;
+}
+
+.container {
+  padding: 30px;
+  background: white;
+}
+
+button {
+  background: #333;
+  color: white;
+  padding: 20px 80px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+img {
+  cursor: pointer;
+}
+
+.bw {
+  justify-content: space-between;
 }
