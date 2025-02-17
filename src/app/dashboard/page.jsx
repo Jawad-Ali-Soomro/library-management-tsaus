@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "@/store/userSlice";
 
 const Dashboard = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -15,8 +18,10 @@ const Dashboard = () => {
         const res = await axios.get("/api/auth/validate", {
           withCredentials: true,
         });
-        console.log(res.data);
-        setUser(res.data.user.user);
+        const user = res.data.user.user;
+        setUserInfo(user);
+        dispatch(setUser(user));
+
         setLoading(false);
       } catch (error) {
         router.push("/login");
@@ -24,11 +29,16 @@ const Dashboard = () => {
     };
 
     checkAuth();
-  }, [router]);
+  }, [router, dispatch]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <div className="loading flex page">
+        <div className="loader flex"></div>
+      </div>
+    );
 
-  return <h1>Welcome {user?.username} to the Dashboard</h1>;
+  return <h1>Welcome {userInfo?.username} to the Dashboard</h1>;
 };
 
 export default Dashboard;

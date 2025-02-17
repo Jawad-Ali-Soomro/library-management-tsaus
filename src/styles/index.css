@@ -1,4 +1,5 @@
-@import "./../styles/auth.css";
+@import "./auth.css";
+@import "./header.css";
 .page {
   min-height: 100vh;
 }
