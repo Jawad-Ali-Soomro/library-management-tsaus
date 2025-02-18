@@ -81,7 +81,7 @@ const Page = () => {
           </div>
           <button
             disabled={btnDisabled}
-            style={{ background: btnDisabled ? "gray" : "royalblue" }}
+            style={{ background: btnDisabled ? "gray" : "#87724e" }}
             onClick={handleLogin}
           >
             Login

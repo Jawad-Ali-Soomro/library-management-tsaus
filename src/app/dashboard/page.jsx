@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/store/userSlice";
+import Header from "@/components/Header";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -38,7 +39,11 @@ const Dashboard = () => {
       </div>
     );
 
-  return <h1>Welcome {userInfo?.username} to the Dashboard</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default Dashboard;
