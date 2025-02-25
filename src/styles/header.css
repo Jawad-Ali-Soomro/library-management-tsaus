@@ -1,8 +1,9 @@
 .header-container {
-  width: calc(100% - 200px);
+  width: calc(100%);
   position: fixed;
   padding-top: 10px;
-  left: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
   z-index: 10;
   top: 0;
   .logo {
@@ -33,6 +34,10 @@
         height: 45px;
         border-radius: 50%;
       }
+    }
+
+    .search-bar:focus-within {
+      background: #eee;
     }
     button {
       width: 50px;

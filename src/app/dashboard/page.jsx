@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/store/userSlice";
 import Header from "@/components/Header";
 
@@ -12,6 +12,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
   const dispatch = useDispatch();
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -29,7 +30,13 @@ const Dashboard = () => {
       }
     };
 
+    const fetchBooks = async () => {
+      const apiRequest = await axios.get("/api/book/all");
+      setBooks(apiRequest.data.foundBooks);
+    };
+
     checkAuth();
+    fetchBooks();
   }, [router, dispatch]);
 
   if (loading)
@@ -38,10 +45,25 @@ const Dashboard = () => {
         <div className="loader flex"></div>
       </div>
     );
-
+  console.log(userInfo);
   return (
     <>
       <Header />
+      <div className="search-container flex">
+        <h1>Welcome {userInfo?.username}</h1>
+      </div>
+      <div className="books-container flex">
+        <div className="books-wrapper flex">
+          {books?.map((book) => {
+            return (
+              <div className="book-card flex" key={book?._id}>
+                <div className="details flex"></div>
+                <img src={book?.cover_page} alt="" />
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 };
