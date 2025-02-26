@@ -57,7 +57,15 @@ const Dashboard = () => {
           {books?.map((book) => {
             return (
               <div className="book-card flex" key={book?._id}>
-                <div className="details flex"></div>
+                <div className="details flex">
+                  <div className="department">
+                    <p>{book?.department} </p>
+                  </div>
+                  <h3>{book?.title}</h3>
+                  <div className="quantity flex">
+                    <p>{book?.quantity}</p>
+                  </div>
+                </div>
                 <img src={book?.cover_page} alt="" />
               </div>
             );
