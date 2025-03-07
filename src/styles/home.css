@@ -158,6 +158,8 @@
           width: 30px;
           height: 30px;
           border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
         }
       }
     }

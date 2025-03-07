@@ -61,7 +61,7 @@ const Dashboard = () => {
                   <div className="department">
                     <p>{book?.department} </p>
                   </div>
-                  <h3>{book?.title}</h3>
+                  <h3>{book?.title?.substring(0, 27)}</h3>
                   <div className="quantity flex">
                     <p>{book?.quantity}</p>
                   </div>
